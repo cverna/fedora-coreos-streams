@@ -49,7 +49,7 @@ jobs:
       - name: Checkout fedora-coreos-config
         uses: actions/checkout@v3
         with:
-          repository: coreos/fedora-coreos-config
+          repository: cverna/fedora-coreos-config
           ref: ${{ env.target_stream }}
           path: fcos
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
@@ -72,7 +72,7 @@ jobs:
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
           path: fcos
           branch: ${{ env.target_stream }}-promotion
-          push-to-fork: coreosbot-releng/fedora-coreos-config
+          push-to-fork: cverna/fedora-coreos-config
           title: "[${{ env.target_stream }}] ${{ env.commit_title }}"
           body: "Triggered by @${{ github.event.sender.login }} in ${{ github.event.issue.html_url }}."
           committer: "CoreOS Bot <coreosbot@fedoraproject.org>"
